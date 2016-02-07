@@ -104,7 +104,6 @@ a:after {
 	color: black;
 	font-size: 70px;
 	font-weight: 700;
-  text-shadow: 4px 4px 4px rgba(60, 60, 60, 0.68);
 }
 
 #headerwrap h3 {
@@ -113,7 +112,6 @@ a:after {
 	font-weight: 100;
   font-style: oblique;
   text-transform:uppercase;
-  text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.98);
 }
 
 #headerwrap .logo {
