@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on </title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in Abouts on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Pedro Planel</copyright>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/about/</guid>
+      <description>About Me Hello, I&amp;rsquo;m Pedro Gabriel P, a seasoned software engineer with over 15 years of experience in driving technological innovation and delivering high-impact software solutions across various industries, including e-commerce, fintech, and web3.&#xA;My journey in software engineering has been marked by significant achievements:&#xA;Designed and led the development of a high-performance order matching engine. Developed a comprehensive system for buying, selling, and exchanging digital assets for a Banking-as-a-Service (BaaS) fintech.</description>
+    </item>
+  </channel>
+</rss>
