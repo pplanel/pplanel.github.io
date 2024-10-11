@@ -1,6 +1,5 @@
 const fps = new class {
   constructor() {
-    this.fps = document.getElementById("fps");
     this.frames = [];
     this.lastFrameTimeStamp = performance.now();
   }
