@@ -83,15 +83,26 @@ def test_site():
         if len(stripe_matches) < 20:
             errors.append(f"Expected at least 20 color stripe segments, found {len(stripe_matches)}")
 
-        # Tactile button micro-interactions
-        tactile_classes = [
-            "shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]",
-            "hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px]",
-            "active:shadow-none active:translate-x-[2px] active:translate-y-[2px]",
+        # Tactile micro-interactions (consolidated in <style> block and applied on elements)
+        tactile_rules = [
+            ".btn-tactile",
+            ".btn-tactile:hover",
+            ".btn-tactile:active",
+            ".card-tactile",
+            ".card-tactile:hover",
+            ".card-tactile:active",
+            "box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);",
+            "box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);",
+            "transform: translate(1px, 1px);",
+            "transform: translate(2px, 2px);",
         ]
-        for tc in tactile_classes:
-            if tc not in html:
-                errors.append(f"Missing tactile button class: '{tc}'")
+        for tr in tactile_rules:
+            if tr not in html:
+                errors.append(f"Missing tactile CSS rule in style block: '{tr}'")
+
+        for cls in ["btn-tactile", "card-tactile"]:
+            if cls not in html:
+                errors.append(f"Missing tactile class '{cls}' in markup")
 
         # Responsive navigation
         if "grid-cols-5" not in html or "text-xs md:text-sm" not in html:
@@ -106,11 +117,13 @@ def test_site():
         if 'href="/game-of-life/"' not in html and 'href="game-of-life/"' not in html:
             errors.append("Missing link to /game-of-life/")
 
-        # Contact info
+        # Contact info & footer links
         if "pplanel@gmail.com" not in html:
             errors.append("Missing email contact: pplanel@gmail.com")
         if "github.com/pplanel" not in html and "https://github.com/pplanel" not in html:
             errors.append("Missing GitHub link for pplanel")
+        if "@PPLANEL" in html:
+            errors.append("Found redundant '@PPLANEL' link in footer; expected clean 'GITHUB · EMAIL'")
 
         # Footer badges
         if "PROD" not in html:

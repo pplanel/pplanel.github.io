@@ -12,10 +12,34 @@
             scroll-behavior: smooth;
         }
 
-        .btn-tactile,
-        .card-tactile {
+        .btn-tactile {
+            border: 1px solid #000000;
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
             cursor: pointer;
             user-select: none;
+        }
+        .btn-tactile:hover {
+            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+            transform: translate(1px, 1px);
+        }
+        .btn-tactile:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+        .card-tactile {
+            border: 1px solid #000000;
+            box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+        }
+        .card-tactile:hover {
+            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+            transform: translate(1px, 1px);
+        }
+        .card-tactile:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
         }
     </style>
 </head>
@@ -53,27 +77,27 @@
                     <div class="flex-1 h-full" style="background-color: #e85d04"></div>
                 </div>
             </div>
-            <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-bold px-2.5 py-1 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center gap-1 whitespace-nowrap">
+            <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile bg-white font-mono text-xs md:text-sm font-bold px-2.5 py-1 text-black flex items-center gap-1 whitespace-nowrap">
                 GH ↗
             </a>
         </header>
 
         <!-- Navigation Bar -->
         <nav class="grid grid-cols-5 gap-1.5 md:gap-2 mb-4 md:mb-6" aria-label="Main Navigation">
-            <a href="#top" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center gap-1.5">
+            <a href="#top" class="btn-tactile bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 flex items-center justify-center gap-1.5">
                 <span class="inline-block w-2 h-2 rounded-full bg-[#177a45]"></span>
                 Home
             </a>
-            <a href="#about" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+            <a href="#about" class="btn-tactile bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 flex items-center justify-center">
                 About
             </a>
-            <a href="#projects" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+            <a href="#projects" class="btn-tactile bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 flex items-center justify-center">
                 Projects
             </a>
-            <a href="#blog" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+            <a href="#blog" class="btn-tactile bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 flex items-center justify-center">
                 Blog
             </a>
-            <a href="#contact" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+            <a href="#contact" class="btn-tactile bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 flex items-center justify-center">
                 Contact
             </a>
         </nav>
@@ -97,7 +121,7 @@
                             I am a software engineer focused on building robust backend systems, distributed architectures, and pragmatic developer tools. With a strong foundation in computer science and practical systems programming, I enjoy solving complex engineering challenges and creating simple, maintainable software that lasts.
                         </p>
                         <div class="flex flex-wrap items-center gap-3">
-                            <a href="#contact" class="btn-tactile inline-block px-4 py-2 bg-[#d4a72c] font-mono text-xs md:text-sm font-bold text-black border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                            <a href="#contact" class="btn-tactile inline-block px-4 py-2 bg-[#d4a72c] font-mono text-xs md:text-sm font-bold text-black">
                                 Contact →
                             </a>
                             <span class="font-mono text-xs text-gray-600">(Open for collaboration)</span>
@@ -128,12 +152,12 @@
                         <p class="font-mono text-xs md:text-sm text-gray-800 leading-relaxed mb-6">
                             Explorations across systems programming, web technologies, and interactive graphics. I like crafting tools and demonstrations that prove concepts with lean, efficient architectures.
                         </p>
-                        <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile inline-block px-4 py-2 bg-[#f2572b] text-white font-mono text-xs md:text-sm font-bold border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                        <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile inline-block px-4 py-2 bg-[#f2572b] text-white font-mono text-xs md:text-sm font-bold">
                             View GitHub →
                         </a>
                     </div>
                     <div>
-                        <a href="/game-of-life/" class="card-tactile block border border-black p-4 bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                        <a href="/game-of-life/" class="card-tactile block p-4 bg-white">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="font-mono font-bold text-xs md:text-sm">Game of Life</span>
                                 <span class="text-[10px] font-mono font-bold bg-[#177a45] text-white px-1.5 py-0.5">DEMO ↗</span>
@@ -163,7 +187,7 @@
                         Thoughts and notes on software engineering, distributed systems, developer workflows, and architecture patterns. Writing to think clearly and document learnings.
                     </p>
                     <div class="flex flex-wrap items-center gap-3">
-                        <a href="#blog" class="btn-tactile inline-block px-4 py-2 bg-[#177a45] text-white font-mono text-xs md:text-sm font-bold border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                        <a href="#blog" class="btn-tactile inline-block px-4 py-2 bg-[#177a45] text-white font-mono text-xs md:text-sm font-bold">
                             View Posts →
                         </a>
                         <span class="font-mono text-xs text-gray-600">(Coming soon)</span>
@@ -221,8 +245,6 @@
                 © COPYRIGHT 2026, PEDRO PLANEL. ALL RIGHTS RESERVED.
             </div>
             <div class="flex items-center gap-3 font-bold">
-                <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-black">@PPLANEL</a>
-                <span>·</span>
                 <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-black">GITHUB</a>
                 <span>·</span>
                 <a href="mailto:pplanel@gmail.com" class="hover:underline hover:text-black">EMAIL</a>
