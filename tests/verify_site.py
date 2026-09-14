@@ -1,9 +1,49 @@
 import os
 import sys
 import re
-from html.parser import HTMLParser
+import http.server
+import socketserver
+import threading
+import urllib.request
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+def test_http_serving():
+    errors = []
+    class QuietHandler(http.server.SimpleHTTPRequestHandler):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, directory=REPO_ROOT, **kwargs)
+        def log_message(self, format, *args):
+            pass
+
+    httpd = socketserver.TCPServer(("127.0.0.1", 0), QuietHandler)
+    port = httpd.server_address[1]
+    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread.start()
+
+    try:
+        endpoints = [
+            ("/", 200),
+            ("/game-of-life/", 200),
+            ("/game-of-life/index.html", 200),
+            ("/game-of-life/bootstrap.js", 200),
+            ("/game-of-life/728d384596d1385ab19c.module.wasm", 200),
+            ("/CNAME", 200),
+        ]
+        for path, expected_status in endpoints:
+            url = f"http://127.0.0.1:{port}{path}"
+            req = urllib.request.Request(url)
+            try:
+                with urllib.request.urlopen(req) as resp:
+                    if resp.status != expected_status:
+                        errors.append(f"HTTP {path} returned status {resp.status}, expected {expected_status}")
+            except Exception as e:
+                errors.append(f"HTTP request to {url} failed: {e}")
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+
+    return errors
 
 def test_site():
     errors = []
@@ -28,7 +68,9 @@ def test_site():
         with open(index_path, "r", encoding="utf-8") as f:
             html = f.read()
 
-        # Title & Meta
+        # Viewport & Title
+        if '<meta name="viewport" content="width=device-width, initial-scale=1.0">' not in html:
+            errors.append("Missing responsive viewport meta tag")
         if "<title>Pedro Planel - Software Engineer</title>" not in html:
             errors.append("Missing or incorrect <title>")
 
@@ -40,6 +82,20 @@ def test_site():
         stripe_matches = re.findall(r'style="background-color:\s*#[0-9a-fA-F]{6}"', html)
         if len(stripe_matches) < 20:
             errors.append(f"Expected at least 20 color stripe segments, found {len(stripe_matches)}")
+
+        # Tactile button micro-interactions
+        tactile_classes = [
+            "shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]",
+            "hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px]",
+            "active:shadow-none active:translate-x-[2px] active:translate-y-[2px]",
+        ]
+        for tc in tactile_classes:
+            if tc not in html:
+                errors.append(f"Missing tactile button class: '{tc}'")
+
+        # Responsive navigation
+        if "grid-cols-5" not in html or "text-xs md:text-sm" not in html:
+            errors.append("Navigation missing responsive grid or text classes")
 
         # Sections
         for section_id in ["about", "projects", "blog", "contact"]:
@@ -61,6 +117,10 @@ def test_site():
             errors.append("Missing PROD badge in footer")
         if "V1.0.0" not in html:
             errors.append("Missing V1.0.0 badge in footer")
+
+    # 4. Check HTTP serving
+    http_errors = test_http_serving()
+    errors.extend(http_errors)
 
     if errors:
         print("VERIFICATION FAILED:")
