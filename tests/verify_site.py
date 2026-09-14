@@ -131,6 +131,19 @@ def test_site():
         if "V1.0.0" not in html:
             errors.append("Missing V1.0.0 badge in footer")
 
+        # 5. Dark mode feature assertions
+        if "darkMode: 'class'" not in html and 'darkMode: "class"' not in html:
+            errors.append("Missing Tailwind darkMode: 'class' configuration")
+        if 'id="theme-toggle"' not in html:
+            errors.append("Missing #theme-toggle button in markup")
+        if "dark:bg-[#121212]" not in html:
+            errors.append("Missing dark background class 'dark:bg-[#121212]' on body")
+        if "dark:bg-[#1a1a1a]" not in html:
+            errors.append("Missing dark container class 'dark:bg-[#1a1a1a]'")
+        if "localStorage.getItem('theme')" not in html and "localStorage.theme" not in html:
+            errors.append("Missing localStorage theme persistence script")
+
+
     # 4. Check HTTP serving
     http_errors = test_http_serving()
     errors.extend(http_errors)
