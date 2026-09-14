@@ -1,64 +1,262 @@
-<!--
-               ___                            ___      
-              /\_ \                          /\_ \     
- _____   _____\//\ \      __      ___      __\//\ \    
-/\ '__`\/\ '__`\\ \ \   /'__`\  /' _ `\  /'__`\\ \ \   
-\ \ \L\ \ \ \L\ \\_\ \_/\ \L\.\_/\ \/\ \/\  __/ \_\ \_ 
- \ \ ,__/\ \ ,__//\____\ \__/.\_\ \_\ \_\ \____\/\____\
-  \ \ \/  \ \ \/ \/____/\/__/\/_/\/_/\/_/\/____/\/____/
-   \ \_\   \ \_\                                       
-    \/_/    \/_/             
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    <title>Pedro Planel - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="9bd8d51f-c7bb-430c-b253-4fbb78315826"></script>
     <style>
-        :root {
-            --fofo: #0F0F0F;
-            --bg-color: #2D2E2E;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .abg {
-            background-color: var(--bg-color);
+        .btn-tactile {
+            border: 1px solid #000000;
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
         }
 
-        .fofo {
-            color: var(--fofo);
+        .btn-tactile:hover {
+            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+            transform: translate(1px, 1px);
         }
 
-        .f8 {
-            font-size: 1rem;
+        .btn-tactile:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
         }
 
-        @media screen and (min-width: 320px) and (max-width: 480px) {
-            .f8 {
-                font-size: 0.375rem;
-            }
+        .card-tactile {
+            border: 1px solid #000000;
+            box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
+        }
+
+        .card-tactile:hover {
+            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+            transform: translate(1px, 1px);
+        }
+
+        .card-tactile:active {
+            box-shadow: none;
+            transform: translate(2px, 2px);
         }
     </style>
 </head>
 
-<body>
-    <article class="vh-100 dt w-100 abg">
-        <div class="dtc v-mid tc white ph3 ph4-l">
-            <a class="link dim dark-pink b f8 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">
-                <pre>
-                    __                 __      __         
-       ____  ____  / /___ _____  ___  / / ____/ /__ _   __
-      / __ \/ __ \/ / __ `/ __ \/ _ \/ / / __  / _ \ | / /
-     / /_/ / /_/ / / /_/ / / / /  __/ /_/ /_/ /  __/ |/ / 
-    / .___/ .___/_/\__,_/_/ /_/\___/_/(_)__,_/\___/|___/  
-   /_/   /_/                                              
-            </pre>
+<body class="bg-[#e8e8e8] text-black font-mono min-h-screen selection:bg-black selection:text-white" id="top">
+    <div class="max-w-4xl mx-auto px-2 py-3 md:px-6 md:py-6">
+
+        <!-- Top Header Bar -->
+        <header class="flex items-center justify-between gap-3 mb-4 md:mb-6">
+            <div class="flex items-center gap-3 flex-1 min-w-0">
+                <a href="#top" class="font-mono font-bold text-base md:text-lg tracking-tight whitespace-nowrap text-black hover:opacity-80">
+                    Pedro Planel
+                </a>
+                <!-- 20-segment Calibration Stripe -->
+                <div class="flex-1 h-3 md:h-3.5 flex border border-black min-w-[80px] overflow-hidden" aria-hidden="true">
+                    <div class="flex-1 h-full" style="background-color: #c41e3a"></div>
+                    <div class="flex-1 h-full" style="background-color: #e85d04"></div>
+                    <div class="flex-1 h-full" style="background-color: #1e4d8c"></div>
+                    <div class="flex-1 h-full" style="background-color: #2563eb"></div>
+                    <div class="flex-1 h-full" style="background-color: #06b6d4"></div>
+                    <div class="flex-1 h-full" style="background-color: #d4a72c"></div>
+                    <div class="flex-1 h-full" style="background-color: #a855f7"></div>
+                    <div class="flex-1 h-full" style="background-color: #1e1e1e"></div>
+                    <div class="flex-1 h-full" style="background-color: #e5e5e5"></div>
+                    <div class="flex-1 h-full" style="background-color: #d4d4d4"></div>
+                    <div class="flex-1 h-full" style="background-color: #c4c4c4"></div>
+                    <div class="flex-1 h-full" style="background-color: #b4b4b4"></div>
+                    <div class="flex-1 h-full" style="background-color: #a4a4a4"></div>
+                    <div class="flex-1 h-full" style="background-color: #949494"></div>
+                    <div class="flex-1 h-full" style="background-color: #1e1e1e"></div>
+                    <div class="flex-1 h-full" style="background-color: #177a45"></div>
+                    <div class="flex-1 h-full" style="background-color: #2563eb"></div>
+                    <div class="flex-1 h-full" style="background-color: #7c3aed"></div>
+                    <div class="flex-1 h-full" style="background-color: #c41e3a"></div>
+                    <div class="flex-1 h-full" style="background-color: #e85d04"></div>
+                </div>
+            </div>
+            <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-bold px-2.5 py-1 text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center gap-1 whitespace-nowrap">
+                GH ↗
             </a>
-        </div>
-    </article>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="grid grid-cols-5 gap-1.5 md:gap-2 mb-4 md:mb-6" aria-label="Main Navigation">
+            <a href="#top" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center gap-1.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-[#177a45]"></span>
+                Home
+            </a>
+            <a href="#about" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+                About
+            </a>
+            <a href="#projects" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+                Projects
+            </a>
+            <a href="#blog" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+                Blog
+            </a>
+            <a href="#contact" class="btn-tactile border border-black bg-white font-mono text-xs md:text-sm font-medium text-black text-center py-1.5 md:py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] flex items-center justify-center">
+                Contact
+            </a>
+        </nav>
+
+        <!-- Main Card Container -->
+        <main class="bg-white p-4 md:p-6 border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] space-y-6 md:space-y-8">
+
+            <!-- Hello / About Section -->
+            <section id="about">
+                <h2 class="font-mono font-bold text-sm md:text-base tracking-wider uppercase mb-2">Hello</h2>
+                <hr class="border-t border-dotted border-gray-400 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
+                    <div>
+                        <p class="font-mono text-xs md:text-sm text-gray-700 font-semibold mb-3">
+                            Software Engineer / Open Source Enthusiast / Builder
+                        </p>
+                        <blockquote class="border-l-4 border-black bg-gray-50 p-3 md:p-4 mb-4 text-xs md:text-sm italic">
+                            "Pedro Planel — Building reliable systems, pragmatic tools, and clean digital experiences."
+                        </blockquote>
+                        <p class="font-mono text-xs md:text-sm text-gray-800 leading-relaxed mb-6">
+                            I am a software engineer focused on building robust backend systems, distributed architectures, and pragmatic developer tools. With a strong foundation in computer science and practical systems programming, I enjoy solving complex engineering challenges and creating simple, maintainable software that lasts.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a href="#contact" class="btn-tactile inline-block px-4 py-2 bg-[#d4a72c] font-mono text-xs md:text-sm font-bold text-black border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                                Contact →
+                            </a>
+                            <span class="font-mono text-xs text-gray-600">(Open for collaboration)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="border border-black p-4 bg-gray-50 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]">
+                            <h3 class="font-mono font-bold text-xs md:text-sm uppercase tracking-wider mb-3 pb-1 border-b border-black">Philosophy</h3>
+                            <ul class="space-y-3 font-mono text-xs md:text-sm">
+                                <li class="border-l-4 border-[#1e4d8c] pl-2.5 py-1.5 bg-white border border-black">Simplicity over complexity.</li>
+                                <li class="border-l-4 border-[#177a45] pl-2.5 py-1.5 bg-white border border-black">Build for durability.</li>
+                                <li class="border-l-4 border-[#f2572b] pl-2.5 py-1.5 bg-white border border-black">Ship, measure, and iterate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <hr class="border-t border-dotted border-gray-400">
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2 class="font-mono font-bold text-sm md:text-base tracking-wider uppercase mb-2">Projects</h2>
+                <hr class="border-t border-dotted border-gray-400 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
+                    <div>
+                        <p class="font-mono text-xs md:text-sm text-gray-800 leading-relaxed mb-6">
+                            Explorations across systems programming, web technologies, and interactive graphics. I like crafting tools and demonstrations that prove concepts with lean, efficient architectures.
+                        </p>
+                        <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="btn-tactile inline-block px-4 py-2 bg-[#f2572b] text-white font-mono text-xs md:text-sm font-bold border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                            View GitHub →
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/game-of-life/" class="card-tactile block border border-black p-4 bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono font-bold text-xs md:text-sm">Game of Life</span>
+                                <span class="text-[10px] font-mono font-bold bg-[#177a45] text-white px-1.5 py-0.5">DEMO ↗</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-700 mb-3">
+                                Interactive Conway's Game of Life simulation built with WebAssembly and WebGL for high performance rendering.
+                            </p>
+                            <div class="flex flex-wrap gap-1 font-mono text-[10px]">
+                                <span class="border border-black px-1.5 py-0.5 bg-gray-100">WebAssembly</span>
+                                <span class="border border-black px-1.5 py-0.5 bg-gray-100">WebGL</span>
+                                <span class="border border-black px-1.5 py-0.5 bg-gray-100">Rust</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <hr class="border-t border-dotted border-gray-400">
+
+            <!-- Blog Section -->
+            <section id="blog">
+                <h2 class="font-mono font-bold text-sm md:text-base tracking-wider uppercase mb-2">Blog</h2>
+                <hr class="border-t border-dotted border-gray-400 mb-6">
+                <div>
+                    <p class="font-mono text-xs md:text-sm text-gray-800 leading-relaxed mb-6">
+                        Thoughts and notes on software engineering, distributed systems, developer workflows, and architecture patterns. Writing to think clearly and document learnings.
+                    </p>
+                    <a href="#blog" class="btn-tactile inline-block px-4 py-2 bg-[#177a45] text-white font-mono text-xs md:text-sm font-bold border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-100 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]">
+                        View Posts →
+                    </a>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <hr class="border-t border-dotted border-gray-400">
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2 class="font-mono font-bold text-sm md:text-base tracking-wider uppercase mb-2">Contact</h2>
+                <hr class="border-t border-dotted border-gray-400 mb-6">
+                <div class="overflow-x-auto border-l-4 border-[#3498db] border-t border-r border-b border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] bg-white">
+                    <table class="w-full font-mono text-xs md:text-sm text-left border-collapse">
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-2.5 px-3 md:px-4 font-bold text-gray-900 bg-gray-50 w-28 md:w-36 border-r border-gray-200">Email</th>
+                                <td class="py-2.5 px-3 md:px-4 text-gray-800">
+                                    <a href="mailto:pplanel@gmail.com" class="underline hover:text-[#1e4d8c]">pplanel@gmail.com</a>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-2.5 px-3 md:px-4 font-bold text-gray-900 bg-gray-50 border-r border-gray-200">GitHub</th>
+                                <td class="py-2.5 px-3 md:px-4 text-gray-800">
+                                    <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#1e4d8c]">github.com/pplanel</a>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-2.5 px-3 md:px-4 font-bold text-gray-900 bg-gray-50 border-r border-gray-200">Website</th>
+                                <td class="py-2.5 px-3 md:px-4 text-gray-800">
+                                    <a href="https://pplanel.dev" class="underline hover:text-[#1e4d8c]">pplanel.dev</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="py-2.5 px-3 md:px-4 font-bold text-gray-900 bg-gray-50 border-r border-gray-200">Status</th>
+                                <td class="py-2.5 px-3 md:px-4 text-gray-800">
+                                    <span class="inline-flex items-center gap-2">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-[#177a45]"></span>
+                                        Available for select engineering projects
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-black py-4 mt-6 md:mt-8 font-mono text-xs flex flex-col md:flex-row items-center justify-between gap-3 text-gray-700">
+            <div class="tracking-wide text-center md:text-left">
+                © COPYRIGHT 2026, PEDRO PLANEL. ALL RIGHTS RESERVED.
+            </div>
+            <div class="flex items-center gap-3 font-bold">
+                <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-black">@PPLANEL</a>
+                <span>·</span>
+                <a href="https://github.com/pplanel" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-black">GITHUB</a>
+                <span>·</span>
+                <a href="mailto:pplanel@gmail.com" class="hover:underline hover:text-black">EMAIL</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="bg-[#177a45] text-white px-1.5 py-0.5 font-bold text-[10px] tracking-wider">PROD</span>
+                <span class="border border-black px-1.5 py-0.5 font-bold text-[10px] tracking-wider bg-white">V1.0.0</span>
+            </div>
+        </footer>
+
+    </div>
 </body>
 
 </html>
